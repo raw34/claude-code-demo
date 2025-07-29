@@ -1,0 +1,43 @@
+# 依赖
+node_modules/
+vendor/
+
+# 构建产物
+dist/
+build/
+*.exe
+server
+
+# 环境变量
+.env
+backend/.env.local
+.env.*.local
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试覆盖率
+coverage/
+*.cover
+*.out
+
+# Go
+go.sum
+
+# 临时文件
+*.tmp
+*.temp
