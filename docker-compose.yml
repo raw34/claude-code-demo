@@ -1,3 +1,7 @@
+# Docker Compose 配置
+# 环境变量通过根目录的 .env 文件设置
+# 使用 .env.example 作为模板创建 .env 文件
+
 version: '3.8'
 
 services:

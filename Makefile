@@ -49,7 +49,7 @@ dev-services:
 # 本地运行后端
 dev-backend:
 	@echo "Starting backend development server..."
-	cd backend && cp .env.local .env 2>/dev/null || true && go run cmd/server/main.go
+	cd backend && go run cmd/server/main.go
 
 # 本地运行前端
 dev-frontend:

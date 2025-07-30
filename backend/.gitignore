@@ -18,10 +18,8 @@ go.work
 server
 !cmd/
 
-# Environment variables
-.env
-../.env.local
-.env.production
+# Environment variables are managed at project root
+# See ../.env.example for configuration
 
 # IDE
 .idea/

@@ -30,18 +30,21 @@ cd claude-code-demo
 
 2. 配置环境变量
 ```bash
+# Docker部署：直接复制示例文件
 cp .env.example .env
-# 编辑 .env 文件，设置以下关键配置：
-# - DB_ROOT_PASSWORD: MySQL root密码
-# - DB_PASSWORD: 应用数据库密码
-# - REDIS_PASSWORD: Redis密码
-# - JWT_SECRET: JWT签名密钥
+
+# 本地开发：使用本地开发配置
+cp .env.local.example .env
+
+# 编辑 .env 文件，根据需要修改配置
 ```
 
 3. 使用 Docker Compose 启动所有服务
 ```bash
 make build
 make up
+# 或直接使用
+docker-compose up -d
 ```
 
 4. 访问应用
@@ -53,6 +56,18 @@ make up
 ```bash
 make down
 ```
+
+## 环境变量配置说明
+
+项目使用统一的环境变量管理，所有配置文件都在项目根目录：
+
+- `.env` - 实际使用的环境变量文件（被 .gitignore 忽略）
+- `.env.example` - Docker部署的环境变量模板
+- `.env.local.example` - 本地开发的环境变量模板
+
+关键配置项：
+- `DB_HOST` / `REDIS_HOST`: Docker环境使用服务名(database/redis)，本地开发使用localhost
+- 其他配置项在两种环境下保持一致
 
 ## 项目结构
 
@@ -290,13 +305,16 @@ Docker Compose已配置端口映射，允许本地开发连接：
 - **Redis**: `localhost:6379`
   - 密码: `redispassword`
 
-### 后端本地开发配置
+### 环境变量配置
 
-后端项目包含 `.env.local` 文件，已预配置本地开发环境变量：
+确保根目录有正确的 `.env` 文件：
 
 ```bash
+# 本地开发（连接Docker容器中的MySQL和Redis）
+cp .env.local.example .env
+
+# 后端会自动读取根目录的 .env 文件
 cd backend
-cp .env.local .env  # 使用本地配置
 go run cmd/server/main.go
 ```
 

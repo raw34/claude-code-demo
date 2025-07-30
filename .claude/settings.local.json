@@ -9,7 +9,8 @@
       "Bash(yarn type-check)",
       "Bash(yarn dev:*)",
       "Bash(yarn build)",
-      "Bash(yarn:*)"
+      "Bash(yarn:*)",
+      "mcp__sequential__sequentialthinking"
     ],
     "deny": []
   }

@@ -15,9 +15,14 @@ import (
 )
 
 func main() {
-	// 加载环境变量
+	// 加载环境变量，优先级：
+	// 1. 当前目录的 .env
+	// 2. 项目根目录的 .env
 	if err := godotenv.Load(); err != nil {
-		log.Println("No .env file found")
+		// 尝试加载项目根目录的 .env
+		if err := godotenv.Load("../.env"); err != nil {
+			log.Println("No .env file found in current or parent directory")
+		}
 	}
 
 	// 加载配置
