@@ -2,43 +2,67 @@
 node_modules/
 vendor/
 
-# 构建产物
-dist/
-build/
-*.exe
-server
-
 # 环境变量
 .env
 .env.local
 .env.production
 .env.*.local
 
-# 日志
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# 编辑器
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
 # 系统文件
 .DS_Store
 Thumbs.db
 
-# 测试覆盖率
-coverage/
-*.cover
-*.out
+# 编辑器
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Go
-go.sum
+# 日志
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # 临时文件
 *.tmp
 *.temp
+*.local
+
+# ==== 前端相关 ====
+frontend/dist/
+frontend/dist-ssr/
+
+# ==== 后端相关 ====
+# Go 二进制文件
+backend/server
+backend/*.exe
+backend/*.exe~
+backend/*.dll
+backend/*.so
+backend/*.dylib
+
+# Go 测试文件
+backend/*.test
+backend/*.out
+
+# Go 工作区和依赖
+backend/go.sum
+backend/go.work
+
+# Go 覆盖率
+backend/coverage/
+backend/*.cover
+
+# 确保 cmd 目录被追踪
+!backend/cmd/
