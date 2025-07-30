@@ -10,7 +10,9 @@
       "Bash(yarn dev:*)",
       "Bash(yarn build)",
       "Bash(yarn:*)",
-      "mcp__sequential__sequentialthinking"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
